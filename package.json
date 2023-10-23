@@ -1,0 +1,33 @@
+{
+  "name": "react-jwt-auth",
+  "version": "1.0.0",
+  "description": "React JWT Authentication",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx rollup -c"
+  },
+  "author": "Dennis Paler <dennis@shockweb.studio>",
+  "license": "ISC",
+  "repository": {
+    "url": "https://github.com/akosidencio/react-jwt-auth.git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/react": "^18.0.34",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "jwt-decode": "^3.1.2",
+    "typescript": "^5.0.4"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "jwt-decode": "^3.1.2",
+    "typescript": "^5.0.4"
+  }
+}
