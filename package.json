@@ -2,15 +2,30 @@
   "name": "react-jwt-auth",
   "version": "1.0.0",
   "description": "React JWT Authentication",
-  "main": "src/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.mjs",
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx rollup -c"
   },
   "author": "Dennis Paler <dennis@shockweb.studio>",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "url": "https://github.com/akosidencio/react-jwt-auth.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.mjs",
+      "require": "./dist/index.cjs.js"
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",
@@ -19,15 +34,15 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@types/react": "^18.0.34",
+    "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "jwt-decode": "^3.1.2",
     "typescript": "^5.0.4"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "jwt-decode": "^3.1.2",
-    "typescript": "^5.0.4"
+    "react": "^16.8.0 || ^17 || ^18",
+    "react-dom": "^16.8.0 || ^17 || ^18",
+    "universal-cookie": "^6.1.1"
   }
 }
