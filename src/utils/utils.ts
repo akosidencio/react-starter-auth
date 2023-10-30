@@ -2,13 +2,12 @@ import jwtDecode from "jwt-decode";
 
 import {  AuthStateUserObject, TokenObject } from "../types"
 
-function isAuthenticated(token: string) : boolean {
+function isTokenValid(token: string) : boolean {
   if (token) {
     const decodedJwt:  TokenObject = jwtDecode(token);
     if (typeof decodedJwt === 'object' && decodedJwt !== null) {
-      return decodedJwt.exp * 1000 < Date.now()
+      return decodedJwt.exp * 1000 > Date.now()
     }
-    return false;
   }
   return false;
 }
@@ -28,4 +27,10 @@ function getStateUser() {
   }
 }
 
-export { isAuthenticated, setStateUser, getStateUser };
+function deleteStateUser() {
+  if (typeof window !== "undefined" && window.localStorage) {
+    localStorage.removeItem('starter_auth_user');
+  }
+}
+
+export { isTokenValid, setStateUser, getStateUser, deleteStateUser };

@@ -11,6 +11,9 @@ export interface AuthStateInterface {
 }
 
 export interface TokenObject {
-  exp: number
+  exp: number,
+  iat: number,
+  iss: string,
+
 }
 

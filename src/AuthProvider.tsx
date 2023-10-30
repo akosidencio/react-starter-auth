@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import Cookies from 'js-cookie';
 
 import AuthContext from './AuthContext';
 import clientApi from './api';
-import { getStateUser, isAuthenticated, setStateUser } from './utils/utils';
+import { deleteStateUser, getStateUser, isTokenValid, setStateUser } from './utils/utils';
 
 import { AuthStateInterface } from './types';
 
@@ -13,27 +13,24 @@ type Props = {
 
 const AuthProvider = ({ children }: Props) => {
   const [user, setUser] = React.useState(null);
-  // const [loading, setLoading] = React.useState(true);
-
+  
   React.useEffect(() => {
     async function loadUserFromCookies() {
       const token = Cookies.get('starter_auth_token');
       if (token) {
-        const isTokenValid = isAuthenticated(token); // check if token expired
-        if (isTokenValid) {
-          clientApi.defaults.headers.Authorization = `Bearer ${token}`
-          const user = getStateUser();
-          if (user) setUser(user);
-        } else {
-          // logout
-          logout()
-        }
+          if (isTokenValid(token)) { // check if token expired
+            clientApi.defaults.headers.Authorization = `Bearer ${token}`
+            const user = getStateUser();
+            setUser(user);
+          } else {
+            logout()
+          }
       }
     }
     loadUserFromCookies();
   }, []);
 
-  const setAuth = async (state: AuthStateInterface) => {
+  const setAuth = (state: AuthStateInterface) => {
     if (state?.token) {
       let secure = false
       if (typeof window !== "undefined") {
@@ -49,6 +46,7 @@ const AuthProvider = ({ children }: Props) => {
 
   const logout = () => {
     Cookies.remove('starter_auth_token');
+    deleteStateUser();
     setUser(null);
     delete clientApi.defaults.headers.Authorization
     window.location.pathname = '/';
