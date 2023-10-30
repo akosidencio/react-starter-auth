@@ -12,7 +12,11 @@
 
 ### Install
 
-    npm install react-jwt-auth
+  npm install react-starter-auth
+
+  or 
+
+  yarn react-starter-auth
 
 ### Quickstart
 
