@@ -1,22 +1,39 @@
 {
     "compilerOptions": {
-      "sourceMap": true,
-      "module": "es2015",
-      "target": "es2018",
-      "moduleResolution": "node",
-      "outDir": "./dist",
-      "jsx": "react",
-      "skipLibCheck": true,
       "declaration": true,
-      "declarationMap": true,
-      "noEmit": true,
+      "declarationDir": "./types",
+      "sourceMap": true,
+      "module": "ESNext",
+      "target": "ES5",
+      "lib": [
+        "dom",
+        "es6"
+      ],
+      "moduleResolution": "Node",
+      "jsx": "react",
       "esModuleInterop": true,
-      "lib": ["dom", "dom.iterable", "esnext"],
-      "strict": true,
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
       "noUnusedLocals": true,
       "noUnusedParameters": true,
-      "noImplicitReturns": true,
-      "noFallthroughCasesInSwitch": true
+      "allowSyntheticDefaultImports": true,
+      "allowJs": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "noEmit": false,
+      "outDir": "./dist/esm",
     },
-    "include": ["src"]
+    "exclude": [
+      "node_modules",
+      "dist",
+      "types",
+    ],
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx"
+    ],
 }

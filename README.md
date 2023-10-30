@@ -1,6 +1,6 @@
 <div align="center">
-        <a href="#" title="React JWT Authentication">
-            <img src="https://raw.githubusercontent.com/react-hook-form/react-hook-form/master/docs/logo.png" alt="React JWT Authentication" />
+        <a href="#" title="React Starter Authentication">
+            <img src="https://raw.githubusercontent.com/react-hook-form/react-hook-form/master/docs/logo.png" alt="React Starter Authentication" />
         </a>
 </div>
 
@@ -33,11 +33,20 @@
 ### Quickstart
 
 ```jsx
-import { setJWTtoken } from 'react-jwt-auth';
+import { useAuth } from 'react-starter-auth';
 
+const { setAuthUser } = useAuth()
 
 const jwt_token = 'jsjdjdjsxxfd'
-setJWTtoken(jwt_token)
+
+const authuser = {
+  token: 'xxxxx',
+  user: {
+    name: 'john doe',
+    email: 'example@example.com'
+  }
+}
+setAuthUser(authuser)
 
 ```
 
