@@ -1,16 +1,13 @@
 {
   "name": "react-starter-auth",
   "version": "0.0.1",
-  "description": "React Starter Authentication",
+  "description": "React Next Starter Authentication",
   "keywords": [
     "react",
     "next",
     "auth",
     "jwt"
   ],
-  "author": "Dennis Paler <dennis@shockweb.studio>",
-  "homepage": "https://github.com/akosidencio/react-starter-auth.git",
-  "license": "MIT",
   "source": "src/index.tsx",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -22,9 +19,12 @@
   "files": [
     "src"
   ],
+  "author": "Dennis Paler <dennis@shockweb.studio>",
+  "homepage": "https://github.com/akosidencio/react-starter-auth.git",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/akosidencio/react-starter-auth.git"
+    "url": "git+https://github.com/akosidencio/react-starter-auth.git"
   },
   "scripts": {
     "build": "run-s build:*",
@@ -67,18 +67,14 @@
     "ts-jest": "29.1.1"
   },
   "dependencies": {
-    "axios": "^1.6.0",
-    "js-cookie": "^3.0.1",
-    "jwt-decode": "^3.1.2",
     "react": ">=16.8.0 || ^17.x || ^18.x",
-    "react-router-dom": "^6.2.0"
+    "react-dom": ">=16.8.0 || ^17.x || ^18.x"
   },
   "peerDependencies": {
     "axios": "^1.6.0",
     "js-cookie": "^3.0.1",
     "jwt-decode": "^3.1.2",
     "react": ">=16.8.0 || ^17.x || ^18.x",
-    "react-dom": ">=16.8.0 || ^17.x || ^18.x",
-    "react-router-dom": "^6.2.0"
+    "react-dom": ">=16.8.0 || ^17.x || ^18.x"
   }
 }

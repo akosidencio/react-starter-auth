@@ -11,12 +11,13 @@
 - Protect route 
 
 ### Install
-
+```jsx
   npm install react-starter-auth
 
-  or 
+  #or 
 
   yarn react-starter-auth
+```
 
 ### Quickstart
 
