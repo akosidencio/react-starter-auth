@@ -6,10 +6,7 @@
     "react",
     "next",
     "auth",
-    "authentication",
-    "jwt",
-    "jsonwebtoken",
-    "token"
+    "jwt"
   ],
   "author": "Dennis Paler <dennis@shockweb.studio>",
   "homepage": "https://github.com/akosidencio/react-starter-auth.git",
