@@ -1,5 +1,5 @@
 {
-  "name": "react-jwt-auth",
+  "name": "react-starter-auth",
   "version": "1.0.0",
   "description": "React JWT Authentication",
   "main": "dist/index.cjs.js",
@@ -9,12 +9,23 @@
   "sideEffects": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx rollup -c"
+    "prebuild": "pnpm clean",
+    "build": "pnpm build:modern",
+    "build:watch": "pnpm build:modern -w",
+    "build:modern": "npx rollup -c"
   },
   "author": "Dennis Paler <dennis@shockweb.studio>",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "jwt",
+    "authentication",
+    "typescript",
+    "cookie",
+    "localstorage"
+  ],
   "repository": {
-    "url": "https://github.com/akosidencio/react-jwt-auth.git"
+    "url": "https://github.com/akosidencio/react-starter-auth.git"
   },
   "files": [
     "dist"
@@ -44,5 +55,6 @@
     "react": "^16.8.0 || ^17 || ^18",
     "react-dom": "^16.8.0 || ^17 || ^18",
     "universal-cookie": "^6.1.1"
-  }
+  },
+  "packageManager": "pnpm@7.18.0"
 }
