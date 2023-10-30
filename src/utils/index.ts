@@ -1,4 +1,5 @@
 import jwtDecode from "jwt-decode";
+import Cookies from "js-cookie";
 
 import {  AuthStateUserObject, TokenObject } from "../types"
 
@@ -28,9 +29,18 @@ function getStateUser() {
 }
 
 function deleteStateUser() {
+  Cookies.remove('starter_auth_token');
   if (typeof window !== "undefined" && window.localStorage) {
     localStorage.removeItem('starter_auth_user');
   }
 }
 
-export { isTokenValid, setStateUser, getStateUser, deleteStateUser };
+function isAuthenticated() {
+  const token = Cookies.get('starter_auth_token');
+  if (token) {
+    isTokenValid(token)
+  }
+}
+
+
+export { isTokenValid, setStateUser, getStateUser, deleteStateUser, isAuthenticated };

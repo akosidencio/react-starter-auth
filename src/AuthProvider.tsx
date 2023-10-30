@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 
 import AuthContext from './AuthContext';
 import clientApi from './api';
-import { deleteStateUser, getStateUser, isTokenValid, setStateUser } from './utils/utils';
+import { deleteStateUser, getStateUser, isTokenValid, setStateUser } from './utils';
 
 import { AuthStateInterface } from './types';
 
@@ -45,7 +45,6 @@ const AuthProvider = ({ children }: Props) => {
   };
 
   const logout = () => {
-    Cookies.remove('starter_auth_token');
     deleteStateUser();
     setUser(null);
     delete clientApi.defaults.headers.Authorization
