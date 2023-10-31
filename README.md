@@ -10,7 +10,7 @@
 - JWT based authentication
 - Protect route 
 
-### Install
+### Installation
 ```jsx
   npm install react-starter-auth
 
@@ -19,22 +19,54 @@
   yarn react-starter-auth
 ```
 
-### Quickstart
+### Setup
 
 ```jsx
-import { useAuth } from 'react-starter-auth';
+import { AuthProvider } from 'react-starter-auth';
 
-const { setAuthUser } = useAuth()
-
-const jwt_token = 'jsjdjdjsxxfd'
-
-const authuser = {
-  token: 'xxxxx',
-  user: {
-    name: 'john doe',
-    email: 'example@example.com'
-  }
-}
-setAuthUser(authuser)
+<AuthProvider>
+  <App>
+</AuthProvider>
 
 ```
+### Signin
+
+```jsx
+import { useAuth } from 'react-starter-auth'
+
+const { signIn } = useAuth()
+
+const access_token = 'jsjdjdjsxxfd' // response from api
+const user {
+    name: 'john doe',
+    email: 'example@example.com',
+    phone: '',
+    role: ''
+}
+
+const authuser = {
+  token: access_token,
+  user: user
+}
+signIn(authuser)
+
+```
+
+### Private route page
+
+```jsx
+import { ProtectedRoute, withAuthentication } from 'react-starter-auth'
+
+```
+
+### User 
+
+```jsx
+
+import { useAuth } from 'react-starter-auth'
+
+const { isAuthenticated, user } = useAuth()
+
+```
+
+

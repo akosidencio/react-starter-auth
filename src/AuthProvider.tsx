@@ -23,14 +23,14 @@ const AuthProvider = ({ children }: Props) => {
             const user = getStateUser();
             setUser(user);
           } else {
-            logout()
+            logOut()
           }
       }
     }
     loadUserFromCookies();
   }, []);
 
-  const setAuth = (state: AuthStateInterface) => {
+  const signIn = (state: AuthStateInterface) => {
     if (state?.token) {
       let secure = false
       if (typeof window !== "undefined") {
@@ -44,7 +44,7 @@ const AuthProvider = ({ children }: Props) => {
     }
   };
 
-  const logout = () => {
+  const logOut = () => {
     deleteStateUser();
     setUser(null);
     delete clientApi.defaults.headers.Authorization
@@ -53,7 +53,7 @@ const AuthProvider = ({ children }: Props) => {
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated: !!user, user, setAuth, logout }}
+      value={{ isAuthenticated: !!user, user, signIn, logOut }}
     >
       {children}
     </AuthContext.Provider>

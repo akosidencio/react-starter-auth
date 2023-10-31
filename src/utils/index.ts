@@ -38,8 +38,9 @@ function deleteStateUser() {
 function isAuthenticated() {
   const token = Cookies.get('starter_auth_token');
   if (token) {
-    isTokenValid(token)
+    return isTokenValid(token)
   }
+  return false
 }
 
 
