@@ -40,6 +40,8 @@ const AuthProvider = ({ children }: Props) => {
       httpClient.defaults.headers.Authorization = `Bearer ${state?.token}`
       if (state?.user) {
         setStateUser(state?.user)
+      } else {
+        setStateUser({ name: 'Anonymous'})
       }
     }
   };
