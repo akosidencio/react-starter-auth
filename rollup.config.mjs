@@ -22,7 +22,16 @@ export default [
         dir: './dist',
         format: 'esm',
         sourcemap: true,
-        preserveModules: true
+        preserveModules: true,
+        name: 'ReactStarterAuth',
+        globals: {
+          "react": "React",
+          "js-cookie": "Cookies",
+          "axios": "Axios",
+          "jwt-decode": "jwtDecode",
+          "react-router-dom":"ReactRouterDOM"
+        },
+        sourcemap: true
       },
     ],
     plugins: [
@@ -43,6 +52,7 @@ export default [
           "react": "React",
           "js-cookie": "Cookies",
           "axios": "Axios",
+          "jwt-decode": "jwtDecode",
           "react-router-dom":"ReactRouterDOM"
         },
         sourcemap: true

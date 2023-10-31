@@ -1,6 +1,6 @@
 {
   "name": "react-starter-auth",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "description": "React Next Starter Authentication",
   "keywords": [
     "react",
@@ -14,10 +14,12 @@
   "unpkg": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "directories": {
-    "src": "src"
+    "src": "src",
+    "dist": "dist"
   },
   "files": [
-    "src"
+    "src",
+    "dist"
   ],
   "author": "Dennis Paler <dennis@shockweb.studio>",
   "homepage": "https://github.com/akosidencio/react-starter-auth.git",
@@ -63,12 +65,14 @@
     "rollup-plugin-filesize": "10.0.0",
     "rollup-plugin-license": "^3.2.0",
     "rollup-plugin-peer-deps-external": "2.2.4",
-    "rollup-plugin-typescript2": "0.36.0",
     "ts-jest": "29.1.1"
   },
   "dependencies": {
+    "js-cookie": "^3.0.1",
+    "jwt-decode": "^3.1.2",
     "react": ">=16.8.0 || ^17.x || ^18.x",
-    "react-dom": ">=16.8.0 || ^17.x || ^18.x"
+    "react-dom": ">=16.8.0 || ^17.x || ^18.x",
+    "rollup-plugin-typescript2": "^0.36.0"
   },
   "peerDependencies": {
     "axios": "^1.6.0",

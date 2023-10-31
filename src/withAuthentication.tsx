@@ -6,8 +6,7 @@ const withAuthentication = <P extends Record<string, unknown>>(
   ): React.FC<P> => {
     const Auth: React.FC<P> = (props) => {
       if(!isAuthenticated()) {
-        window.location.pathname = '/login'
-        return
+        window.location.pathname = '/login';
       }
       return <Component {...props} />;
     };

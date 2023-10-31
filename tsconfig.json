@@ -1,39 +1,25 @@
 {
     "compilerOptions": {
-      "declaration": true,
-      "declarationDir": "./types",
       "sourceMap": true,
-      "module": "ESNext",
-      "target": "ES5",
-      "lib": [
-        "dom",
-        "es6"
-      ],
-      "moduleResolution": "Node",
+      "module": "es2015",
+      "target": "es2018",
+      "moduleResolution": "node",
+      "outDir": "./dist",
       "jsx": "react",
+      "skipLibCheck": true,
+      "declaration": true,
+      "declarationMap": true,
+      "noEmit": true,
       "esModuleInterop": true,
-      "noImplicitReturns": true,
-      "noImplicitThis": true,
-      "noImplicitAny": true,
-      "strictNullChecks": true,
+      "lib": ["dom", "dom.iterable", "esnext"],
+      "strict": false,
       "noUnusedLocals": true,
       "noUnusedParameters": true,
-      "allowSyntheticDefaultImports": true,
-      "allowJs": true,
-      "strict": true,
-      "forceConsistentCasingInFileNames": true,
-      "resolveJsonModule": true,
-      "isolatedModules": true,
-      "noEmit": false,
-      "outDir": "./dist/esm",
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true
     },
+    "include": ["src"],
     "exclude": [
-      "node_modules",
-      "dist",
-      "types",
-    ],
-    "include": [
-      "src/**/*.ts",
-      "src/**/*.tsx"
+      "node_modules"
     ],
 }

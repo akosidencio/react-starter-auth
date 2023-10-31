@@ -7,7 +7,6 @@ type Props = {
 function ProtectRoute({ children }: Props)  {
     if (!isAuthenticated){
       deleteStateUser() // logout
-      return
     }
     return children;
 };
