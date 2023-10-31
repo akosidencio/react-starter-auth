@@ -28,7 +28,6 @@ export default [
           "react": "React",
           "js-cookie": "Cookies",
           "axios": "Axios",
-          "jwt-decode": "jwtDecode",
           "react-router-dom":"ReactRouterDOM"
         },
         sourcemap: true
@@ -52,7 +51,6 @@ export default [
           "react": "React",
           "js-cookie": "Cookies",
           "axios": "Axios",
-          "jwt-decode": "jwtDecode",
           "react-router-dom":"ReactRouterDOM"
         },
         sourcemap: true

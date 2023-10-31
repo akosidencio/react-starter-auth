@@ -11,9 +11,22 @@ export interface AuthStateInterface {
 }
 
 export interface TokenObject {
-  exp: number,
-  iat: number,
-  iss: string,
+  iss?: string;
+  sub?: string;
+  aud?: string[] | string;
+  exp?: number;
+  nbf?: number;
+  iat?: number;
+  jti?: string;
 
 }
 
+export interface TokenHeader {
+  typ?: string;
+  alg?: string;
+  kid?: string;
+}
+
+export interface TokenDecodeOptions {
+  header?: boolean;
+}
