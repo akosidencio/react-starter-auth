@@ -1,4 +1,4 @@
-import Cookies from "js-cookie";
+import { getAuthToken, clearAuthToken } from "./cookie"
 
 import { AuthError } from "../errors";
 import {  AuthStateUserObject, TokenObject, TokenHeader, TokenDecodeOptions } from "../types"
@@ -19,14 +19,14 @@ function getStateUser() {
 }
 
 function deleteStateUser() {
-  Cookies.remove('starter_auth_token');
+  clearAuthToken()
   if (typeof window !== "undefined" && window.localStorage) {
     localStorage.removeItem('starter_auth_user');
   }
 }
 
 function isAuthenticated() {
-  const token = Cookies.get('starter_auth_token');
+  const token = getAuthToken()
   if (token) {
     return isTokenValid(token)
   }

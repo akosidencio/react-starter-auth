@@ -1,4 +1,4 @@
-import { deleteStateUser, isAuthenticated } from "./utils"
+import { deleteStateUser, isAuthenticated } from "./utils/helpers"
 
 type Props = {
     children: string | JSX.Element | JSX.Element[];

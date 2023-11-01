@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { isAuthenticated } from "./utils"
+import { isAuthenticated } from "./utils/helpers"
 
 const withAuthentication = <P extends Record<string, unknown>>(
     Component: React.ComponentType<P>

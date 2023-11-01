@@ -1,3 +1,4 @@
+
 export interface AuthStateUserObject {
   [x: string]: any;
 }
@@ -34,3 +35,4 @@ export interface FetcherOptions  {
 }
 
 export interface FetcherHeaders  {[key: string]: string | any | undefined}
+

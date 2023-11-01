@@ -1,21 +1,20 @@
 import * as React from 'react';
-import Cookies from 'js-cookie';
 
 import AuthContext from './AuthContext';
-import { deleteStateUser, getStateUser, isTokenValid, setStateUser } from './utils';
-
+import { deleteStateUser, getStateUser, isTokenValid, setStateUser } from './utils/helpers';
+import { setAuthToken, getAuthToken } from './utils/cookie';
 import { AuthStateInterface } from './types';
 
-const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = React.useState(null);
+const AuthProvider = ({ children } : { children: React.ReactNode }) => {
+  const [authUser, setAuthUser] = React.useState(null);
   
   React.useEffect(() => {
     async function loadUserFromCookies() {
-      const token = Cookies.get('starter_auth_token');
+      const token = getAuthToken()
       if (token) {
           if (isTokenValid(token)) { // check if token expired
             const user = getStateUser();
-            setUser(user);
+            setAuthUser(user);
           } else {
             logOut()
           }
@@ -30,7 +29,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       if (typeof window !== "undefined") {
         secure = window.location.protocol === 'https:'
       }
-      Cookies.set('starter_auth_token', state?.token, { secure: secure });
+      setAuthToken(state?.token, secure);
       if (state?.user) {
         setStateUser(state?.user)
       } else {
@@ -41,13 +40,13 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const logOut = () => {
     deleteStateUser();
-    setUser(null);
+    setAuthUser(null);
     window.location.pathname = '/';
   };
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated: !!user, user, signIn, logOut }}
+      value={{ isAuthenticated: !!authUser, user: authUser, signIn, logOut }}
     >
       {children}
     </AuthContext.Provider>
