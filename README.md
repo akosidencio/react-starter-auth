@@ -7,9 +7,9 @@
 
 ### Features
 
-Authentication Library for React Js for Token Based Authentication with Json Web Token
+Authentication library built for react token based authentication with JWT
 - Easy to implement
-- Works with create-react-app and next js
+- Works with next js
 - Secured client authentication
 
 ### Installation
