@@ -2,7 +2,6 @@ import * as React from 'react';
 import Cookies from 'js-cookie';
 
 import AuthContext from './AuthContext';
-import httpClient from './httpClient';
 import { deleteStateUser, getStateUser, isTokenValid, setStateUser } from './utils';
 
 import { AuthStateInterface } from './types';
@@ -19,7 +18,6 @@ const AuthProvider = ({ children }: Props) => {
       const token = Cookies.get('starter_auth_token');
       if (token) {
           if (isTokenValid(token)) { // check if token expired
-            httpClient.defaults.headers.Authorization = `Bearer ${token}`
             const user = getStateUser();
             setUser(user);
           } else {
@@ -37,7 +35,6 @@ const AuthProvider = ({ children }: Props) => {
         secure = window.location.protocol === 'https:'
       }
       Cookies.set('starter_auth_token', state?.token, { secure: secure });
-      httpClient.defaults.headers.Authorization = `Bearer ${state?.token}`
       if (state?.user) {
         setStateUser(state?.user)
       } else {
@@ -49,7 +46,6 @@ const AuthProvider = ({ children }: Props) => {
   const logOut = () => {
     deleteStateUser();
     setUser(null);
-    delete httpClient.defaults.headers.Authorization
     window.location.pathname = '/';
   };
 

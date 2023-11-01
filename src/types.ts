@@ -27,3 +27,10 @@ export interface TokenHeader {
 export interface TokenDecodeOptions {
   header?: boolean;
 }
+
+
+export interface FetcherOptions  {
+  headers?: FetcherHeaders
+}
+
+export interface FetcherHeaders  {[key: string]: string | any | undefined}
