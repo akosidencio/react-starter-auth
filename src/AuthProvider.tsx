@@ -6,11 +6,7 @@ import { deleteStateUser, getStateUser, isTokenValid, setStateUser } from './uti
 
 import { AuthStateInterface } from './types';
 
-type Props = {
-  children: string | JSX.Element | JSX.Element[];
-};
-
-const AuthProvider = ({ children }: Props) => {
+const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = React.useState(null);
   
   React.useEffect(() => {

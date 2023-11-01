@@ -7,8 +7,10 @@
 
 ### Features
 
-- JWT based authentication
-- Protect route 
+Authentication Library for React Js for Token Based Authentication with Json Web Token
+- Easy to implement
+- Works with create-react-app and next js
+- Secured client authentication
 
 ### Installation
 ```jsx

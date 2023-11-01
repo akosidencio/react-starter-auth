@@ -35,7 +35,7 @@ function isAuthenticated() {
 
 function b64DecodeUnicode(str: string) {
   return decodeURIComponent(
-    atob(str).replace(/(.)/g, (m, p) => {
+    atob(str).replace(/(.)/g, (p) => {
       let code = (p as string).charCodeAt(0).toString(16).toUpperCase();
       if (code.length < 2) {
         code = "0" + code;
