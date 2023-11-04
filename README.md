@@ -8,9 +8,11 @@
 ### Features
 
 Authentication library built for react token based authentication with JWT
-- Easy to implement
-- Works with next js
-- Secured client authentication
+- Lightweight and easy to use
+- Built for React JS
+- Works with Next js
+- JWT based authentication
+- Secure client authentication
 
 ### Installation
 ```jsx
