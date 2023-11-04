@@ -61,22 +61,19 @@ import { useAuth } from 'react-starter-auth'
 const { isAuthenticated, user } = useAuth()
 
 ```
-```
 
 ### Fetcher
 
+fetcher extends the native Web fetch() API to update each request on the server to set headers Authorizaton Bearer upon sign in.
+
 ```jsx
 import { fetcher } from 'react-starter-auth'
-
-fetcher extends the native Web fetch() API to update each request on the server to set headers Authorizaton Bearer upon sign in.
 
 const res = fetch('https://example.com/api/posts') // GET
 const data = await res.json()
 
 const res = fetch('https://example.com/api/posts', { method: 'POST', body: JSON.stringify(data) }) // POST
 const data = await res.json()
-
-```
 
 ```
 
