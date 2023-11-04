@@ -32,6 +32,13 @@ export interface TokenDecodeOptions {
 
 export interface FetcherOptions  {
   headers?: FetcherHeaders
+  method?: string 
+  mode?: string 
+  cache?: string 
+  credentials?: string 
+  body?: any
+  redirect?: string 
+  referrerPolicy?: string
 }
 
 export interface FetcherHeaders  {[key: string]: string | any | undefined}
