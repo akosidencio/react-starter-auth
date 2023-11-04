@@ -15,9 +15,7 @@ Authentication library built for react token based authentication with JWT
 ### Installation
 ```jsx
   npm install react-starter-auth
-
-  #or 
-
+  
   yarn react-starter-auth
 ```
 
@@ -69,10 +67,10 @@ fetcher extends the native Web fetch() API to update each request on the server 
 ```jsx
 import { fetcher } from 'react-starter-auth'
 
-const res = fetch('https://example.com/api/posts') // GET
+const res = fetcher('https://example.com/api/posts') // GET
 const data = await res.json()
 
-const res = fetch('https://example.com/api/posts', { method: 'POST', body: JSON.stringify(data) }) // POST
+const res = fetcher('https://example.com/api/posts', { method: 'POST', body: JSON.stringify(data) }) // POST
 const data = await res.json()
 
 ```
