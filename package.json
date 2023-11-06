@@ -3,9 +3,9 @@
   "version": "0.1.6",
   "description": "React Next Starter Authentication",
   "keywords": [
-    "react",
-    "next",
-    "auth",
+    "reactjs",
+    "nextjs",
+    "authentication",
     "jwt"
   ],
   "source": "src/index.tsx",
