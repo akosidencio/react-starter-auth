@@ -52,6 +52,8 @@ const authuser = {
 }
 signIn(authuser)
 
+```
+
 ### User 
 
 ```jsx
