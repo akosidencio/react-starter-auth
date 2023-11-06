@@ -1,3 +1,10 @@
+export interface StarterContextType {
+  isAuthenticated: boolean
+  user: AuthStateUserObject
+  signIn: (state: AuthStateInterface) => void
+  logOut: () => void
+}
+
 
 export interface AuthStateUserObject {
   [x: string]: any;
@@ -5,7 +12,7 @@ export interface AuthStateUserObject {
 
 export interface AuthStateInterface {
   token: string,
-  user: AuthStateUserObject | null,
+  user?: AuthStateUserObject | null,
 }
 
 export interface TokenObject {
