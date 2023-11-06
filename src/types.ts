@@ -5,7 +5,6 @@ export interface StarterContextType {
   logOut: () => void
 }
 
-
 export interface AuthStateUserObject {
   [x: string]: any;
 }
