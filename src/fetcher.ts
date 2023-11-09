@@ -14,6 +14,6 @@ function updateOptions(options: FetcherOptions) {
     return update;
 }
 
-export default function fetcher(url: string, options: FetcherOptions) {
-    return fetch(url, updateOptions(options));
+export default function fetcher(url: string, options?: FetcherOptions | undefined | null) {
+    return fetch(url, updateOptions(options))
 }
