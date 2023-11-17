@@ -1,6 +1,6 @@
 {
   "name": "react-starter-auth",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "React Next Starter Authentication",
   "keywords": [
     "reactjs",
@@ -64,12 +64,12 @@
     "rollup-plugin-license": "^3.2.0",
     "rollup-plugin-peer-deps-external": "2.2.4",
     "rollup-plugin-typescript2": "^0.36.0",
-    "ts-jest": "29.1.1"
-  },
-  "dependencies": {
-    "js-cookie": "^3.0.1",
+    "ts-jest": "29.1.1",
     "react": ">=16.8.0 || ^17.x || ^18.x",
     "react-dom": ">=16.8.0 || ^17.x || ^18.x"
+  },
+  "dependencies": {
+    "js-cookie": "^3.0.1"
   },
   "peerDependencies": {
     "js-cookie": "^3.0.1",

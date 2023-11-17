@@ -1,14 +1,17 @@
+import * as React from 'react';
 import { deleteStateUser, isAuthenticated } from "./utils/helpers"
 
-type Props = {
-    children: string | JSX.Element | JSX.Element[];
+type PropType = {
+  component: React.FC
+  redirectPath?: string
 };
 
-function ProtectRoute({ children }: Props)  {
-    if (!isAuthenticated){
-      deleteStateUser() // logout
-    }
-    return children;
+const ProtectedRoute: React.FC<PropType> = ({ component: Component, redirectPath: Path }) => {
+  if (!isAuthenticated){
+    deleteStateUser() // logout
+    window.location.pathname = Path || '/'
+  }
+  return <Component />
 };
 
-export default ProtectRoute
+export default ProtectedRoute;

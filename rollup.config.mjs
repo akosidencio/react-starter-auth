@@ -39,6 +39,7 @@ export default [
       typescript(),
       filesize(),
     ],
+    external: ["react", "react-dom"],
   },
   {
     input: 'src/index.tsx',
@@ -64,5 +65,6 @@ export default [
       licenseBanner,
       filesize(),
     ],
+    external: ["react", "react-dom"],
   },
 ];
