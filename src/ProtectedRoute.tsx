@@ -7,11 +7,12 @@ type PropType = {
 };
 
 const ProtectedRoute: React.FC<PropType> = ({ component: Component, redirectPath: Path }) => {
-  if (!isAuthenticated){
-    deleteStateUser() // logout
-    window.location.pathname = Path || '/'
+  if (isAuthenticated){
+    return <Component />
   }
-  return <Component />
+  deleteStateUser() // logout
+  return window.location.href = Path || '/login'
+  
 };
 
 export default ProtectedRoute;

@@ -7,7 +7,7 @@ import { AuthStateInterface } from './types';
 
 const AuthProvider = ({ children } : { children: React.ReactNode }) => {
   const [authUser, setAuthUser] = React.useState(null);
-  
+
   React.useEffect(() => {
     async function loadUserFromCookies() {
       const token = getAuthToken()
@@ -21,7 +21,7 @@ const AuthProvider = ({ children } : { children: React.ReactNode }) => {
       }
     }
     loadUserFromCookies();
-  }, []);
+  }, [authUser]);
 
   const signIn = (state: AuthStateInterface) => {
     if (state?.token) {
