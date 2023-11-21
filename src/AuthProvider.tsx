@@ -7,9 +7,11 @@ import { AuthStateInterface } from './types';
 
 const AuthProvider = ({ children } : { children: React.ReactNode }) => {
   const [authUser, setAuthUser] = React.useState(null);
+  const [isLoading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
     async function loadUserFromCookies() {
+      setLoading(true)
       const token = getAuthToken()
       if (token) {
           if (isTokenValid(token)) { // check if token expired
@@ -18,10 +20,12 @@ const AuthProvider = ({ children } : { children: React.ReactNode }) => {
           } else {
             logOut()
           }
+          setLoading(false)
       }
+      setLoading(false)
     }
     loadUserFromCookies();
-  }, [authUser]);
+  }, []);
 
   const signIn = (state: AuthStateInterface) => {
     if (state?.token) {
@@ -38,15 +42,15 @@ const AuthProvider = ({ children } : { children: React.ReactNode }) => {
     }
   };
 
-  const logOut = () => {
+  const logOut = (redirectPath?: string) => {
     deleteStateUser();
     setAuthUser(null);
-    window.location.pathname = '/';
+    window.location.href = redirectPath || '/';
   };
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated: !!authUser, user: authUser, signIn, logOut }}
+      value={{ isLoading: isLoading, isAuthenticated: !!authUser, user: authUser, signIn, logOut }}
     >
       {children}
     </AuthContext.Provider>

@@ -1,4 +1,5 @@
 export interface StarterContextType {
+  isLoading: boolean
   isAuthenticated: boolean
   user: AuthStateUserObject
   signIn: (state: AuthStateInterface) => void
